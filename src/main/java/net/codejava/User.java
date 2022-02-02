@@ -1,6 +1,5 @@
 package net.codejava;
 
-//import ip.address.service.RequestServiceImpl;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-//import javax.servlet.http.HttpServletRequest;
 
-//import org.springframework.beans.factory.annotation.Autowired;
+
+
 
 
 
@@ -39,13 +38,8 @@ public class User {
 	@Column(nullable = false,length = 64)
 	private String password;
 	
-//	@Autowired
-//	private HttpServletRequest request;
-//	class ipAddress{
-//		RequestServiceImpl object = new RequestServiceImpl();
-//		ipAddress var1 = object.
-//	}
-//	
+	@Column(name = "verification_code", updatable = false)
+	private String verificationCode;
 	
 	public Long getIdUser() {
 		return idUser;
@@ -88,6 +82,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getVerificationCode() {
+		return verificationCode;
+	}
+	public void setVerificationCode(String verificationCode) {
+		this.verificationCode = verificationCode;
 	}	
 	
 	
